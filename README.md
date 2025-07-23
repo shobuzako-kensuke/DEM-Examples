@@ -9,9 +9,9 @@ This open-source code provides **Discrete Element Method (DEM) simulations**, in
 - Granular Column Collapse (2D)
 - Cylinder Lift (2D) (*Under Construction*)
 
-|Granular Column Collapse | Cylinder Lift (*Under Construction*) |
+|Granular Column Collapse (2D) | Cylinder Lift (2D) (*Under Construction*) |
 |:---:|:---:|
-|![Granular_column_collapse](https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6) | ![Granular_column_collapse](https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6)|
+|<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=300>|<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=300>| 
 
 
 > [!TIP]
@@ -30,7 +30,7 @@ This code is written in **Fortran** (for DEM calculations) and **Python** (for v
 |Visualization | `Python` | Tested with `Python 3.12.0` and requires `matplotlib`|
 |Movie Generation| `ffmpeg` | Required for Python scripts to generate movies|
 
-> [!NOTE]
+> [!TIP]
 > If `ffmpeg` is not installed, run `sudo apt install ffmpeg` for WSL.
 
 

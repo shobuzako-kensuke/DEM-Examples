@@ -24,10 +24,7 @@ program main
     call out_input                      ! copy input file
     call set_background_cell            ! set background cell
     call out_system_info                ! output system info
-
-    if (trim(adjustl(read_name)) == 'new') then
-        call out_data('0')              ! output initial setting
-    endif
+    call out_data('0')              ! output initial setting
 
     !=========================!
     !  main loop              !
