@@ -4,7 +4,6 @@ module input
     !  file name              !
     !=========================!
     character(len=999), parameter :: save_name = 'test'
-    character(len=999), parameter :: read_name = 'new'
     !=========================!
     !  OpenMP                 !
     !=========================!
