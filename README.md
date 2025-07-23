@@ -1,23 +1,17 @@
 # DEM-Examples
 
+<!--
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15709255.svg)](https://doi.org/10.5281/zenodo.15709255)
+-->
 
-This is an open-source fluid simulation code based on the Least Squares Smoothed Particle Hydrodynamics (LS-SPH) [[1](#ref1)], a high-precision and generalized extension of classical SPH.
+This is an open-source code using Discrete Element Method (DEM), providing
+the following simulation examples:
+1. Granular Column Collapse
 
-This code provides the following features (📣 indicates new additions):
-1. A variety of standard fluid benchmark problems, including:
-   - 2D Taylor-Green vortex 📣
-   - 2D Lid-driven cavity flow 📣
-   - 2D Boussinesq convection 📣
-2. Applications to geophysical and engineering problems (currently under development)
+|タイトル|
+|:---:|
+|asdf|
 
-![demo](./demo_CF_TG.png)
-
-## 🎯 Features
-
-- Implementation of both LS-SPH and classical SPH models
-- Support for 2D fluid simulations
-- Written in Fortran with OpenMP and Python
 
 ## ⚙️ Requirements
 
@@ -27,6 +21,7 @@ This code provides the following features (📣 indicates new additions):
 - `make` utility for building Fortran files
 - Python with common libraries (e.g., `matplotlib`, `scipy`)
 - `ffmpeg` for movie generation
+
 
 ## 🖥️ Usage
 
@@ -41,6 +36,7 @@ The following example shows how to simulate the 2D Taylor-Green vortex:
 
 > [!NOTE]
 > To simulate other cases, please refer to the [User Manual (Japanese)](./manual.pdf) and set the appropriate parameters.
+
 
 ## 🧑‍💻 Citation
 
