@@ -4,13 +4,14 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15709255.svg)](https://doi.org/10.5281/zenodo.15709255)
 -->
 
-This is an open-source code using Discrete Element Method (DEM), providing
-the following simulation examples:
+This is an open-source code using Discrete Element Method (DEM), providing the following simulation examples:
+Granular Column Collapse
 1. Granular Column Collapse
 
 |タイトル|
 |:---:|
 |asdf|
+![Granular_column_collapse](https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6)
 
 
 ## ⚙️ Requirements
