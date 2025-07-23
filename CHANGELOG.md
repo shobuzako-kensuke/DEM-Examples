@@ -15,9 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2025-07-23
 
 ### Added
+- README.md
 - `dem_code/cylinder_lift`
 - DEMの基礎理論_ver1.pdf
 - License
 - CHANGELOG.md
 - CITATION.cff
-- README.md
