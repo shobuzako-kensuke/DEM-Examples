@@ -4,7 +4,7 @@ authors:
 - family-names: "Shobuzako"
   given-names: "Kensuke"
   orcid: "https://orcid.org/0009-0000-4453-5398"
-title: "2D-DEM-SAMPLES"
+title: "DEM-Examples"
 version: 1.0.0
 doi: 10.5281/zenodo.15709255
 date-released: 2025-06-21
