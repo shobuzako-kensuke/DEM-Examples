@@ -1,0 +1,33 @@
+# VSCode configuration directories
+**/.vscode/
+
+# Fig and output directories
+**/fig/
+**/output/
+
+# Build artifacts and temporary files related to source code
+**/*.mod
+**/*.o
+**/__pycache__/
+**/start_calculation
+
+# Windows Zone.Identifier metadata files
+**/*Zone.Identifier
+
+# LaTeX 中間ファイル
+**/*.aux
+**/*.bbl
+**/*.blg
+**/*.dvi
+**/*.fdb_latexmk
+**/*.fls
+**/*.log
+**/*.out
+**/*.synctex.gz
+**/*.toc
+
+# tex_edit
+**/tex_edit/
+
+# document
+**/document/
