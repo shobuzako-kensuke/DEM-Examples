@@ -9,7 +9,7 @@ This open-source code provides **Discrete Element Method (DEM) simulations**, in
 
 |Granular Column Collapse (2D) | Cylinder Lift (2D) (*Under Construction*) |
 |:---:|:---:|
-|<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=250>|<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=250>| 
+|<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=300>|<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=300>| 
 
 
 > [!TIP]
@@ -43,7 +43,7 @@ This code is written in **Fortran** (for DEM calculations) and **Python** (for v
 ## 🧑‍💻 Citation
 
 Shobuzako, K. (2025). *DEM-Examples* (Version 1.0.0) [Computer software].  
-Zenodo. https://doi.org/10.5281/zenodo.15709255
+Zenodo. https://doi.org/10.5281/zenodo.16356866
 
 
 ## 🤝 Contributing
