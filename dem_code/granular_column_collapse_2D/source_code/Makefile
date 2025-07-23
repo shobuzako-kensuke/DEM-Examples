@@ -2,7 +2,7 @@ COMPILER = ifx
 
 # For debug, add -check bounds -traceback
 FFLAGS   = -O2 -xHost -fiopenmp -ipo -convert big_endian \
-		   -fpp -heap-arrays -static-intel -check bounds -traceback
+		   -fpp -heap-arrays -static-intel
 
 #==============================================================================#
 #=========================== NOT CHANGE BELOW =================================#

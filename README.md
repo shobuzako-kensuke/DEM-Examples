@@ -7,12 +7,15 @@
 This open-source code provides **Discrete Element Method (DEM) simulations**, including the following examples:
 
 - Granular Column Collapse (2D)
-- Cylinder Lift (2D)
+- Cylinder Lift (2D) (*Under Construction*)
 
-|Granular Column Collapse | Cylinder Lift |
+|Granular Column Collapse | Cylinder Lift (*Under Construction*) |
 |:---:|:---:|
 |![Granular_column_collapse](https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6) | ![Granular_column_collapse](https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6)|
 
+
+> [!TIP]
+> For DEM study,  [Basic_theory_DEM_ver1.pdf](./Basic_theory_DEM_ver1.pdf) might be a helpful resource.
 
 
 ## ⚙️ Requirements
@@ -33,7 +36,7 @@ This code is written in **Fortran** (for DEM calculations) and **Python** (for v
 
 ## 🖥️ Usage
 
-1. Navigate to the simulation directory (e.g., `dem_code/granular_column_collapse_2D`)
+1. Navigate to the simulation directory (e.g., `dem_code/granular_column_collapse_2D/source_code/`)
 2. Run `make` to build the Fortran programs.
 3. Run `./start_calculation` to start the simulation.
 4. After the simulation finishes, run `python main.py` to generate figures.
