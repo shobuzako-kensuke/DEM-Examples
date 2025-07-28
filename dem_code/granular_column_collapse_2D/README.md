@@ -28,7 +28,7 @@ T_{ij}&=(\vec{x}_{j}-\vec{x}_{i})\times \vec{f}_{t_{ij}}~, \\
 M_{ij}&=-\mu_{r}R_{i}\left|\vec{f}_{n_{ij}}\right|\frac{\vec{\omega}_{i}-\vec{\omega}_{j}}{|\vec{\omega}_{i}-\vec{\omega}_{j}|}~,
 \end{align}
 ```
-where $\vec{f}_{n_{ij}}$ is the normal contact force, $\vec{f}_{t_{ij}}$ is the tangential contact force, $\mu_{r}$ is the coefficient of rolling friction, and $R$ is the particle radius.
+where $\vec{f}_ {n_{ij}}$ is the normal contact force, $\vec{f}_ {t_{ij}}$ is the tangential contact force, $\mu_{r}$ is the coefficient of rolling friction, and $R$ is the particle radius.
 In the DEM simulation, the contact force is modeled by the Kelvin-Voigt model, expressed as
 ```math
 \begin{align}
@@ -36,7 +36,7 @@ In the DEM simulation, the contact force is modeled by the Kelvin-Voigt model, e
 \vec{f}_{t_{ij}}&=-k\vec{\delta}_{t_{ij}}-\eta\vec{v}_{t_{ij}}~,
 \end{align}
 ```
-where the subscripts $n$ and $t$ denote the normal and tangential directions, respectively, $k$ denotes the spring constant, $\vec{\delta}$ denotes the relative displacement, $\eta$ denotes the damping coefficient, and $\vec{v}_{ij}\equiv \vec{v}_{i}-\vec{v}_{j}$ denotes the relative velocity.
+where the subscripts $n$ and $t$ denote the normal and tangential directions, respectively, $k$ denotes the spring constant, $\vec{\delta}$ denotes the relative displacement, $\eta$ denotes the damping coefficient, and $\vec{v}_ {ij}\equiv \vec{v}_ {i}-\vec{v}_ {j}$ denotes the relative velocity.
 The damping coefficient $\eta$ is associated with the coefficient of restitution $\mathrm{e}$ and given by 
 ```math
 \eta=-2(\ln \mathrm{e})\sqrt{\frac{mk}{\pi^{2}+(\ln \mathrm{e})^{2}}}~.
@@ -58,8 +58,8 @@ The sliding friction is considered as follows
     \end{cases}~,
 \end{align}
 ```
-where $\mu_{s}$ is the coefficient of sliding friction, $\vec{t}_{ij}$ is the unit tangential vector.
-When contacting with a rigid wall, $\mu_{s}$ is replaced by the coefficient of particle-wall friction $\mu_{w}$.
+where $\mu_ {s}$ is the coefficient of sliding friction, $\vec{t}_ {ij}$ is the unit tangential vector.
+When a particle contacts a rigid wall, $\mu_ {s}$ is replaced by the coefficient of particle-wall friction $\mu_ {w}$.
 
 > [!TIP]
 > Further details of the DEM theory are described in [Basic_theory_DEM.pdf](../../Basic_theory_DEM.pdf).
