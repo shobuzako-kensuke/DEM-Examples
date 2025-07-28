@@ -20,7 +20,7 @@ m_{i}\frac{d\vec{v}_{i}}{dt}&=\sum_{j}\vec{f}_{ij}+m_{i}\vec{g}~, \\
 I_{i}\frac{d\vec{\omega}_{i}}{dt}&=\sum_{j}\left(T_{ij}+M_{ij}\right)~,
 \end{align}
 ```
-where $m$ is the mass, $\vec{v}\equiv d\vec{x}/dt$ is the velocity, $t$ is the time, $\vec{g}$ is the gravitational acceleration, $I$ is the moment of inertia ($I=\frac{2}{5}mR^{2}$ for a uniform sphere), $\omega$ is the angular velocity centered at $\vec{x}_{i}$, and $\vec{f}_{ij}$, $T_{ij}$, and $M_{ij}$ are the contact force, torque, and rolling friction moment, respectively, which are defined as
+where $m$ is the mass, $\vec{v}\equiv d\vec{x}/dt$ is the velocity, $t$ is the time, $\vec{g}$ is the gravitational acceleration, $I$ is the moment of inertia ($I=\frac{2}{5}mR^{2}$ for a uniform sphere), $\vec{\omega}$ is the angular velocity centered at $\vec{x}_ {i}$, and $\vec{f}_ {ij}$, $T_ {ij}$, and $M_ {ij}$ are the contact force, torque, and rolling friction moment, respectively, which are defined as
 ```math
 \begin{align}
 \vec{f}_{ij}&=\vec{f}_{n_{ij}}+\vec{f}_{t_{ij}}~, \\
