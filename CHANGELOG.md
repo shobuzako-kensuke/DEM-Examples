@@ -12,6 +12,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `dem_code/cylinder_lift/`
 -->
 
+## [1.1.0] - 2025-07-29
+
+### Added
+- **Cylinder Lift プログラムを追加**
+- readmeの日本語版を作成 (README_ja.md)
+- makeにgfortranを追加
+- 各テストのreadmeを追加し，各テストの簡単な説明を追加
+- 出力に `eta` を追加（これに伴い，Pythonファイルも変更）
+- Gate開放のしきい値 `U_threshold` をパラメータとして追加
+
+### Changed
+- readmeにifxとgfortranで計算できることを追記
+- readmeのIntel MKLの記述を削除
+- main.f90のコメントアウトをそろえる
+- input.f90に `d0` を付ける
+- out_progress.f90の `openedg` 対策
+- Gateが開かない場合があるので，しきい値を低くする
+- ターミナルに出力する文字列を大文字始まりとする
+- 諸々のcitationを `v1.1.0` とする
+- Python codeを整理する
+
+### Removed
+- cal_recalculation.f90
+
+
 ## [1.0.0] - 2025-07-23
 
 ### Added
