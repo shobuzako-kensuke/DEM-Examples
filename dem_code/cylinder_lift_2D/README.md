@@ -2,7 +2,7 @@
 
 |Cylinder Lift (2D) | Initial setting (an example) |
 |:---:|:---:|
-|<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=300>|<img src="https://github.com/user-attachments/assets/a8586839-d23b-4bf2-b056-c5f4cf1dba70" alt="initial_setting_granular_column_collapse_2D" width=300>|
+|<img src="https://github.com/user-attachments/assets/fd3fed95-f3f8-4f3f-941c-7b6204d75d1b" alt="cylinder_lift" width=300>|<img src="https://github.com/user-attachments/assets/e6584baf-3145-49ac-9c1c-f4a6d3727e53" alt="initial_setting_granular_column_collapse_2D" width=300>|
 
 ## 🚩Problem Statement
 
