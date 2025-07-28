@@ -12,8 +12,7 @@
 
 |Granular Column Collapse | Cylinder Lift |
 |:---:|:---:|
-|<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=300>|<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=300>| 
-
+|<img src="https://github.com/user-attachments/assets/cb0b81a5-61bb-4860-b0f8-f94014b2cc68" alt="granular_column_collapse" width=300>|<img src="https://github.com/user-attachments/assets/fd3fed95-f3f8-4f3f-941c-7b6204d75d1b" alt="cylinder_lift" width=300>| 
 
 > [!TIP]
 > DEMのお勉強には [Basic_theory_DEM.pdf](./Basic_theory_DEM.pdf) が役に立つかもしれません．
