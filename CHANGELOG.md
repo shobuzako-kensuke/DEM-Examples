@@ -25,13 +25,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - readmeにifxとgfortranで計算できることを追記
 - readmeのIntel MKLの記述を削除
-- main.f90のコメントアウトをそろえる
-- input.f90に `d0` を付ける
-- out_progress.f90の `openedg` 対策
-- Gateが開かない場合があるので，しきい値を低くする
-- ターミナルに出力する文字列を大文字始まりとする
-- 諸々のcitationを `v1.1.0` とする
-- Python codeを整理する
+- main.f90のコメントアウトを揃えた
+- input.f90に `d0` を付けた
+- out_progress.f90の `openedg` となる問題を修正した
+- Gateが開かない場合があるので，しきい値を低くした
+- ターミナルに出力する文字列を大文字始まりとした
+- 諸々のcitationを `v1.1.0` とした
+- Python codeを整理した
 
 ### Removed
 - cal_recalculation.f90
