@@ -1,13 +1,13 @@
 subroutine cal_EOM_AME
     !=========================!
-    !  module                 ! 
+    !  module                 !
     !=========================!
     !$use omp_lib
     use input
     use global_variables
 
     !=========================!
-    !  local variables        ! 
+    !  local variables        !
     !=========================!
     implicit none
     integer :: me, you, my_cell, your_cell, link_cell, num, index, c_name(N_you), zero_index
@@ -16,7 +16,7 @@ subroutine cal_EOM_AME
     real(8) :: d_n(2), u_n(2), d_t(2), u_t(2), u_t_ij, f_n_ij, f_t_ij, omega_sign, Force(2), Torque
     
     !=========================!
-    !  cal EOM & AME          ! 
+    !  cal EOM & AME          !
     !=========================!
     !$ call omp_set_dynamic(.false.)
     !$ call omp_set_num_threads(N_threads)
@@ -123,7 +123,7 @@ subroutine cal_EOM_AME
                     f_t_ij = sqrt(f_t(1)**2.0d0 + f_t(2)**2.0d0)  ! magnitude of f_t
 
                     if (f_t_ij > mu_s* f_n_ij) then               ! Yes, sliding
-                        f_t(:) = - mu_s* f_t_ij* t_ij(:)          ! kinetic friction force
+                        f_t(:) = - mu_s* f_n_ij* t_ij(:)          ! kinetic friction force
                         c_delta(index,:) = d_t(:) - u_t(:)*dt     ! not change displacement
 
                     else                                          ! No, below sliding friction
@@ -159,15 +159,6 @@ subroutine cal_EOM_AME
         u_new(:,me) = u(:,me) + Force(:) /m* dt  ! new velocity
         x_new(:,me) = x(:,me) + u_new(:,me)* dt  ! new position
         o_new(:,me) = o(:,me) + Torque   /I* dt  ! new angular momentum
-
-        !=========================!
-        !  check out of bounds    !
-        !=========================!
-        ! if ((x_new(1,me) < 0).or.(x_new(1,me) > Lx).or. &
-        !     (x_new(2,me) < 0).or.(x_new(2,me) > Ly)) then
-        !     write(*,*) '[error] out of bounds @ cal_EOM_AME.f90'
-        !     stop
-        ! endif
 
         !=========================!
         !  save                   !

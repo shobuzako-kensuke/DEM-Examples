@@ -1,27 +1,28 @@
+# Intel Fortran ===============================================================#
 COMPILER = ifx
+FFLAGS   = -O2 -xHost -ipo -fiopenmp -convert big_endian -static-intel
 
-# For debug, add -check bounds -traceback
-FFLAGS   = -O2 -xHost -fiopenmp -ipo -convert big_endian \
-		   -fpp -heap-arrays -static-intel
+# gfortran ====================================================================#
+# COMPILER = gfortran
+# FFLAGS   = -O2 -fopenmp -fconvert=big-endian
 
 #==============================================================================#
 #=========================== NOT CHANGE BELOW =================================#
 #==============================================================================#
 
 #=========================#
-#  file name              # 
+#  file name              #
 #=========================#
 TARGET = start_calculation
 
 #=========================#
-# write all files as .f90 # 
+# write all files as .f90 #
 #=========================#
 COMMON_MOD = \
 	input.f90 \
 	global_variables.f90 \
 	lib_file_operations.f90 \
 	set_system.f90 \
-	set_recalculation.f90 \
 	set_background_cell.f90 \
 	cal_background_cell.f90 \
 	cal_EOM_AME.f90 \
@@ -34,14 +35,13 @@ COMMON_MOD = \
 	main.f90
 	
 #=========================#
-#  write all files as .o  # 
+#  write all files as .o  #
 #=========================#
 OBJECTS = \
 	input.o \
 	global_variables.o \
 	lib_file_operations.o \
 	set_system.o \
-	set_recalculation.o \
 	set_background_cell.o \
 	cal_background_cell.o \
 	cal_EOM_AME.o \
@@ -68,8 +68,8 @@ OBJECTS = \
 $(TARGET): $(OBJECTS)
 	$(COMPILER) $(FFLAGS) $(FLIBS) -o $(TARGET) $(OBJECTS)
 	@echo + -------------------------------------------------------- +
-	@echo [message] compilation has finished
-	@echo [message] input ./start_calculation
+	@echo [message] All programs have been successfully compiled.
+	@echo [message] Please input: ./start_calculation
 	@echo + -------------------------------------------------------- +
 
 #=========================#

@@ -1,27 +1,27 @@
 subroutine out_data(recording_ID)
     !=========================!
-    !  module                 ! 
+    !  module                 !
     !=========================!
     use input
     use global_variables
     use lib_file_operations
 
     !=========================!
-    !  local variables        ! 
+    !  local variables        !
     !=========================!
     implicit none
     character(len=*), intent(in) :: recording_ID
     character(len=999) :: save_path, file_name
 
     !=========================!
-    !  mkdir                  ! 
+    !  mkdir                  !
     !=========================!
     save_path = '../output/'//trim(adjustl(save_name))//'/data/'&
                 //trim(adjustl(recording_ID))//'/'
     call mkdir(trim(adjustl(save_path)))
 
     !=========================!
-    !  output                 ! 
+    !  output                 !
     !=========================!
     ! x
     file_name = trim(adjustl(save_path))//'x.dat'

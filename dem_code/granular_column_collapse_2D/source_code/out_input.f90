@@ -1,18 +1,18 @@
 subroutine out_input
     !=========================!
-    !  module                 ! 
+    !  module                 !
     !=========================!
     use input
     use lib_file_operations
 
     !=========================!
-    !  local variables        ! 
+    !  local variables        !
     !=========================!
     implicit none
     character(len=999) :: path_name, source_name
 
     !=========================!
-    !  mkdir and cp           ! 
+    !  mkdir and cp           !
     !=========================!
     path_name = '../output/'
     call mkdir(trim(adjustl(path_name)))

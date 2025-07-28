@@ -7,14 +7,14 @@ program main
     use global_variables
 
     !=========================!
-    !  local variables        ! 
+    !  local variables        !
     !=========================!
     implicit none
     character(len=999) :: save_step
     real(8) :: omp_get_wtime, y_min
 
     write(*,*) '+ ------------------------------------------------------------------------ +'
-    write(*,*) '[message] calculation has started'
+    write(*,*) '[message] Calculation has started.'
     !$ start_time = omp_get_wtime()
 
     !=========================!
@@ -24,7 +24,7 @@ program main
     call out_input                      ! copy input file
     call set_background_cell            ! set background cell
     call out_system_info                ! output system info
-    call out_data('0')              ! output initial setting
+    call out_data('0')                  ! output initial setting
 
     !=========================!
     !  main loop              !
@@ -32,7 +32,7 @@ program main
     gate_height = 0.0d0                 ! initial gate height
     gate_switch = 0                     ! 0=closed, 1=opening, 2=opened
 
-    do step = start_step, end_step
+    do step = 1, total_step
         !=========================!
         !  DEM calculation        !
         !=========================!
@@ -45,12 +45,12 @@ program main
         !=========================!
         y_min = minval(x(2,:))
 
-        if ((gate_switch == 0).and.(U_max <= 1.0d-2).and.(y_min <= Ly/5.0d0)) then
-            gate_switch = 1             ! set gate state to 'opening'
+        if ((gate_switch == 0).and.(U_max <= U_threshold).and.(y_min <= Ly/5.0d0)) then
+            gate_switch = 1                          ! set gate state to 'opening'
         elseif ((gate_switch == 1).and.(gate_height(1,1) <= Ly))then
-            gate_height = gate_height + v_lift* dt
+            gate_height = gate_height + v_lift* dt   ! lifting gate
         elseif ((gate_switch == 1).and.(gate_height(1,1) > Ly))then
-            gate_switch = 2             ! set gate state to 'opened'
+            gate_switch = 2                          ! set gate state to 'opened'
         endif
 
         !=========================!
@@ -66,7 +66,7 @@ program main
     enddo
 
     call deallocate_array
-    write(*,*) '[message] calculation has finished'
+    write(*,*) '[message] Calculation has finished.'
     write(*,*) '+ ------------------------------------------------------------------------ +'
     write(*,*) ''
 

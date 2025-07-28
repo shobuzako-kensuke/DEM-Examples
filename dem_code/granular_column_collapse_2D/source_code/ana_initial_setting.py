@@ -1,19 +1,18 @@
 #=========================#
-#  module                 # 
+#  module                 #
 #=========================#
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.cm as cm
 import ana_read_fortran as read_f90
 plt.rcParams['mathtext.fontset'] = 'cm' # mathfont for figure
 
 #=========================#
-#  main                   # 
+#  main                   #
 #=========================#
 def main(N, Lx, Ly, W, v_lift, mark_size, parent_path, save_path):
 
     #=========================#
-    #  read                   # 
+    #  read                   #
     #=========================#
     file_name = parent_path + '/data/0/x.dat'
     x = read_f90.binary_files(file_name, 2, N)
@@ -26,10 +25,10 @@ def main(N, Lx, Ly, W, v_lift, mark_size, parent_path, save_path):
     cell = cell.astype(np.int64)  # float >> int
     
     #=========================#
-    #  figure                 # 
+    #  figure                 #
     #=========================#
-    fig = plt.figure(figsize=(12,6), facecolor='white')
-    plt.subplots_adjust(left=0.1, right=0.95, bottom=0.18, top=0.95, wspace=0.35, hspace=0.4)
+    fig = plt.figure(figsize=(12,5.5), facecolor='white')
+    plt.subplots_adjust(left=0.1, right=0.9, bottom=0.18, top=0.95, wspace=0.35, hspace=0.4)
 
     ax1 = fig.add_subplot(121, facecolor='white')
     ax2 = fig.add_subplot(122, facecolor='white')
@@ -46,6 +45,7 @@ def main(N, Lx, Ly, W, v_lift, mark_size, parent_path, save_path):
     # color bar
     cbar = plt.colorbar(cfig, aspect=30, shrink=0.9, ax=ax2, orientation='vertical', pad=0.05, location='right')
     cbar.ax.tick_params(direction='out', length=4, width=1, labelsize=14)
+    cbar.set_label('cell number', fontsize=16, labelpad=10)
 
     # axis label
     ax1.set_xlabel(r'$x~[\mathrm{m}]$', fontsize=24, labelpad=10)

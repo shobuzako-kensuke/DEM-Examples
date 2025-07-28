@@ -1,7 +1,7 @@
 module lib_file_operations
     contains
     !=========================!
-    !  make directory         ! 
+    !  make directory         !
     !=========================!
     subroutine mkdir(directory_name)
         implicit none
@@ -12,7 +12,7 @@ module lib_file_operations
     end subroutine mkdir
 
     !=========================!
-    !  copy file              ! 
+    !  copy file              !
     !=========================!
     subroutine cp_file(from, to)
         implicit none
@@ -23,7 +23,7 @@ module lib_file_operations
     end subroutine cp_file
     
     !=========================!
-    !  write as binary        ! 
+    !  write as binary        !
     !=========================!
     subroutine write_binary(file_name, array, dim_1, dim_2)
         implicit none
@@ -36,7 +36,7 @@ module lib_file_operations
     end subroutine write_binary
 
     !=========================!
-    !  write as ascii         ! 
+    !  write as ascii         !
     !=========================!
     subroutine write_ascii(file_name, array, dim_1, dim_2)
         implicit none
@@ -49,7 +49,7 @@ module lib_file_operations
     end subroutine write_ascii
     
     !=========================!
-    !  read binary            ! 
+    !  read binary            !
     !=========================!
     subroutine read_binary(file_name, array, dim_1, dim_2)
         implicit none

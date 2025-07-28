@@ -1,11 +1,11 @@
 #=========================#
-#  module                 # 
+#  module                 #
 #=========================#
 import re
 import numpy as np
 
 #=========================#
-#  read binary files      # 
+#  read binary files      #
 #=========================#
 def binary_files(file_name, dim_1, dim_2):
     endian = '>'                                     # output have big-endian
@@ -16,7 +16,7 @@ def binary_files(file_name, dim_1, dim_2):
     return (array)
 
 #=========================#
-#  read variables         # 
+#  read variables         #
 #=========================#
 def read_variables(variable_path):
     file = open(variable_path , 'r') # open

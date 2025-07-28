@@ -2,20 +2,20 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16356866.svg)](https://doi.org/10.5281/zenodo.16356866)
 
+[日本語版はこちら](./README_ja.md)
+
 This open-source code provides **Discrete Element Method (DEM) simulations**, including the following examples:
 
-#8 test
-
 - Granular Column Collapse (2D)
-- Cylinder Lift (2D) (*Under Construction*)
+- Cylinder Lift (2D)
 
-|Granular Column Collapse (2D) | Cylinder Lift (2D) (*Under Construction*) |
+|Granular Column Collapse | Cylinder Lift |
 |:---:|:---:|
 |<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=300>|<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=300>| 
 
 
 > [!TIP]
-> For DEM study,  [Basic_theory_DEM_ver1.pdf](./Basic_theory_DEM_ver1.pdf) might be a helpful resource.
+> For DEM study,  [Basic_theory_DEM.pdf](./Basic_theory_DEM.pdf) might be a helpful resource.
 
 
 ## ⚙️ Requirements
@@ -25,13 +25,13 @@ This code is written in **Fortran** (for DEM calculations) and **Python** (for v
 | Category | Requirement | Notes |
 |:---|:---|:---|
 |Operating System |Unix-like environment | Tested on Windows Subsystem for Linux (WSL)|
-|Compiler | [Intel Fortran compiler](https://www.intel.com/content/www/us/en/developer/tools/oneapi/fortran-compiler.html#gs.n7d5f5)| Uses the `ifx` command and Intel MKL (Math Kernel Library)
+|Compiler | Intel Fortran / gfortran| Tested with `ifx` (default) and `gfortran`
 |Build Tool | `make` | For building Fortran files|
 |Visualization | `Python` | Tested with `Python 3.12.0` and requires `matplotlib`|
 |Movie Generation| `ffmpeg` | Required for Python scripts to generate movies|
 
 > [!TIP]
-> If `ffmpeg` is not installed, run `sudo apt install ffmpeg` for WSL.
+> If `ffmpeg` is not installed, run `sudo apt install ffmpeg` .
 
 
 ## 🖥️ Usage
@@ -41,10 +41,13 @@ This code is written in **Fortran** (for DEM calculations) and **Python** (for v
 3. Run `./start_calculation` to start the simulation.
 4. After the simulation finishes, run `python main.py` to generate figures.
 
+> [!NOTE]
+> Each problem statement is described in the **README.md** in its directory.
+
 
 ## 🧑‍💻 Citation
 
-Shobuzako, K. (2025). *DEM-Examples* (Version 1.0.0) [Computer software].  
+Shobuzako, K. (2025). *DEM-Examples* (Version 1.1.0) [Computer software].  
 Zenodo. https://doi.org/10.5281/zenodo.16356866
 
 
@@ -55,4 +58,4 @@ If you would like to improve the code, report a bug, or add a new feature, feel 
 
 ## 🪪 License
 
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) for details.
+This project is licensed under [the MIT License](./LICENSE) .

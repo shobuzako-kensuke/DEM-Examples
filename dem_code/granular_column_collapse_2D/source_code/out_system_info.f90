@@ -7,19 +7,19 @@ subroutine out_system_info
     use lib_file_operations
 
     !=========================!
-    !  local variables        ! 
+    !  local variables        !
     !=========================!
     implicit none
     character(len=999) :: path_name, file_name
 
     !=========================!
-    !  mkdir                  ! 
+    !  mkdir                  !
     !=========================!
     path_name = '../output/'//trim(adjustl(save_name))//'/system_info/'
     call mkdir(trim(adjustl(path_name)))
 
     !=========================!
-    !  write                  ! 
+    !  write                  !
     !=========================!
     file_name = trim(adjustl(path_name))//'system_info_NAMES.dat'
     open(10, file=file_name, status='replace', form='formatted')  ! save variable names as ascii
@@ -37,14 +37,13 @@ subroutine out_system_info
     write(10, *) 'I'
     write(10, *) 'dt'
 
-    write(10, *) 'start_step'
-    write(10, *) 'end_step'
-    write(10, *) 'write_step'
     write(10, *) 'total_step'
+    write(10, *) 'write_step'
 
     write(10, *) 'R'
     write(10, *) 'k'
     write(10, *) 'e'
+    write(10, *) 'eta'
     write(10, *) 'rho'
     write(10, *) 'mu_s'
     write(10, *) 'mu_r'
@@ -56,8 +55,9 @@ subroutine out_system_info
     write(10, *) 'W'
     write(10, *) 'H'
     write(10, *) 'v_lift'
+    write(10, *) 'U_threshold'
 
-    ! write variable values [note: the same order as variable names]
+    ! Write variable values in the same order as variable names
     write(11, *) Nx
     write(11, *) Ny
     write(11, *) N
@@ -67,14 +67,13 @@ subroutine out_system_info
     write(11, *) I
     write(11, *) dt
     
-    write(11, *) start_step
-    write(11, *) end_step
-    write(11, *) write_step
     write(11, *) total_step
+    write(11, *) write_step
 
     write(11, *) R
     write(11, *) k
     write(11, *) e
+    write(11, *) eta
     write(11, *) rho
     write(11, *) mu_s
     write(11, *) mu_r
@@ -86,6 +85,7 @@ subroutine out_system_info
     write(11, *) W
     write(11, *) H
     write(11, *) v_lift
+    write(11, *) U_threshold
 
     close(10)
     close(11)

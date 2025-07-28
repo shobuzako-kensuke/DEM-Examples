@@ -15,7 +15,6 @@ subroutine set_system
     !=========================!
     !  fundamental info       !
     !=========================!
-    total_step = end_step - start_step + 1   ! including initial condition
     D  = 2.0d0* R                            ! diameter [m]
     Nx = int(W/ D)                           ! number of particles along x axis
     Ny = int(H/ D)                           ! number of particles along y axis
@@ -23,8 +22,8 @@ subroutine set_system
 
     m  = rho* (4.0d0/3.0d0)* pi* R**3.0d0    ! mass [kg]
     I  = (2.0d0/5.0d0)* m* R**2.0d0          ! moment of inertia [kg m2]
-    dt = 0.05d0* 2.0d0*sqrt(m/k)              ! time step [s]
-    eta = - 2.0d0* log(e)* sqrt(m*k/ (pi**2.0d0 + (log(e))**2.0d0 ))  ! damping coefficient
+    dt = 0.05d0* 2.0d0*sqrt(m/k)             ! time step [s]
+    eta = - 2.0d0* log(e)* sqrt(m*k/ (pi**2.0d0 + log(e)*log(e) ))  ! damping coefficient
 
     write(*,*) '+ ------------------------------------------------------------------------ +'
     write(*,*) '[message] Nx, Ny, N           :', Nx, Ny, N
@@ -33,8 +32,7 @@ subroutine set_system
     write(*,*) '          I [kg m2]           :', I
     write(*,*) '          eta [kg s-1]        :', eta
     write(*,*) '          time step [s]       :', dt
-    write(*,*) '          total step          :', total_step
-    write(*,*) '          Simulation time [s] :', dt* dble(total_step)
+    write(*,*) '          simulation time [s] :', dt* dble(total_step)
     write(*,*) '+ ------------------------------------------------------------------------ +'
     write(*,*) ''
     write(*,*) ''
@@ -45,7 +43,7 @@ subroutine set_system
     !=========================!
     !  allocate               !
     !=========================!
-    allocate(x(2,N), u(2,N), o(1,N))   ! x=position, u=velocity, o=angular velocity; ((x,y), name)
+    allocate(x(2,N), u(2,N), o(1,N))       ! x=position, u=velocity, o=angular velocity; ((x,y), name)
     allocate(cumulative_delta(N_you,2,N))  ! cumulative_delta(index, (x,y), name)
     allocate(cumulative_name (N_you,N))    ! cumulative_name (index, name)
     x = 0.0d0
@@ -72,7 +70,7 @@ subroutine set_system
     x(2,:) = x(2,:) + 1.0d0*H  ! lift up to 2*H
 
     ! perturbation up to pm 0.05% of diameter
-    CALL random_seed
+    CALL random_seed()
     do me = 1, N
         call random_number(rand_val)
         x(1,me) = x(1,me) + (rand_val - 0.5d0)* 1.0d-3* D

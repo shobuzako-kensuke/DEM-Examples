@@ -1,6 +1,6 @@
 subroutine set_background_cell
     !=========================!
-    !  module                 ! 
+    !  module                 !
     !=========================!
     !$use omp_lib
     use input
@@ -8,7 +8,7 @@ subroutine set_background_cell
     use lib_file_operations
 
     !=========================!
-    !  local variables        ! 
+    !  local variables        !
     !=========================!
     implicit none
     integer :: me, cell_x, cell_y, my_cell
@@ -34,7 +34,7 @@ subroutine set_background_cell
     cell_info = 0
     
     !=========================!
-    !  check initial cells    ! 
+    !  check initial cells    !
     !=========================!
     !$ call omp_set_dynamic(.false.)
     !$ call omp_set_num_threads(N_threads)
@@ -52,7 +52,7 @@ subroutine set_background_cell
     !$OMP barrier
 
     !=========================!
-    !  cell_9                 ! 
+    !  cell_9                 !
     !=========================!
     !$OMP do
     do my_cell = 1, cell_max
@@ -69,10 +69,13 @@ subroutine set_background_cell
     !$OMP enddo
     !$OMP end parallel
 
+    !=========================!
+    !  save cell info         !
+    !=========================!
     path_name = '../output/'//trim(adjustl(save_name))//'/cell/'
     call mkdir(trim(adjustl(path_name)))
     file_name = trim(adjustl(path_name))//'initial_cell.dat'
-    call write_binary(file_name, dble(cell), N, 1)  ! save cell information
+    call write_binary(file_name, dble(cell), N, 1)
     
 end subroutine set_background_cell
 

@@ -1,19 +1,19 @@
 subroutine cal_background_cell
     !=========================!
-    !  module                 ! 
+    !  module                 !
     !=========================!
     !$use omp_lib
     use input
     use global_variables
 
     !=========================!
-    !  local variables        ! 
+    !  local variables        !
     !=========================!
     implicit none
     integer :: me, cell_x, cell_y, my_cell
 
     !=========================!
-    !  zero clear             ! 
+    !  zero clear             !
     !=========================!
     cell      = 0
     N_cell    = 0

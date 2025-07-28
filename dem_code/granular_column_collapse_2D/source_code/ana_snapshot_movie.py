@@ -1,30 +1,27 @@
 #=========================#
-#  module                 # 
+#  module                 #
 #=========================#
 import os
-import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.cm as cm
-import math
 import ana_read_fortran as read_f90
 import ana_mk_movie as mk_movie
 plt.rcParams['mathtext.fontset'] = 'cm' # mathfont for figure
 
 #=========================#
-#  position_only          # 
+#  for position           #
 #=========================#
-def position_only(last_file, write_step, N_file, dt, N, Lx, Ly, W, v_lift, mark_size, parent_path, save_name):
+def position(last_file, write_step, N_file, dt, N, Lx, Ly, W, mark_size, parent_path, save_name):
     save_path = '../fig/{}/snapshot_position'.format(save_name)
     os.makedirs(save_path, exist_ok=True)
     #=========================#
-    #  make snapshots         # 
+    #  make snapshots         #
     #=========================#
     count = 0
     for i in range(0, last_file+1, write_step):
         count += 1
         time = dt * float(i)  # simulation time
         #=========================#
-        #  read                   # 
+        #  read                   #
         #=========================#   
         file_name = parent_path + '/data/{}/x.dat'.format(i)
         x = read_f90.binary_files(file_name, 2, N)
@@ -32,7 +29,7 @@ def position_only(last_file, write_step, N_file, dt, N, Lx, Ly, W, v_lift, mark_
         file_name = parent_path + '/data/{}/gate_height.dat'.format(i)
         gate_height = read_f90.binary_files(file_name, 1, 1)
         #=========================#
-        #  figure                 # 
+        #  figure                 #
         #=========================#   
         fig = plt.figure(figsize=(7,7), facecolor='white')
         plt.subplots_adjust(left=0.18, right=0.95, bottom=0.18, top=0.90, wspace=0.35, hspace=0.4)
@@ -65,7 +62,7 @@ def position_only(last_file, write_step, N_file, dt, N, Lx, Ly, W, v_lift, mark_
         fig.savefig('../fig/{}/snapshot_position/{}.png'.format(save_name, i), format='png', dpi=300, transparent=False)
         plt.close()
         #=========================#
-        #  progress               # 
+        #  progress               #
         #=========================#
         if (i==0):
             print('          >> {:.2f} %'  .format(float(count)/float(N_file)*100), end='')
@@ -81,21 +78,20 @@ def position_only(last_file, write_step, N_file, dt, N, Lx, Ly, W, v_lift, mark_
     print('finish')
 
 
-
 #=========================#
-#  fig_cmap               # 
+#  fig_cmap               #
 #=========================#
-def fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, v_lift, mark_size, val_min, val_max, parent_path, save_name):
+def fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, mark_size, val_min, val_max, parent_path, save_name):
     save_path = '../fig/{}/snapshot_{}'.format(save_name, tmp_name)
     os.makedirs(save_path, exist_ok=True)
     #=========================#
-    #  make snapshots         # 
+    #  make snapshots         #
     #=========================#
     count = 0
     for i in range(0, last_file+1, write_step):
         count += 1
         #=========================#
-        #  read                   # 
+        #  read                   #
         #=========================#   
         time  = dt * float(i)  # simulation time
 
@@ -114,7 +110,7 @@ def fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, v_lift, 
             o = read_f90.binary_files(file_name, 1, N)
 
         #=========================#
-        #  figure                 # 
+        #  figure                 #
         #=========================#   
         fig = plt.figure(figsize=(7.5,6), facecolor='white')
         plt.subplots_adjust(left=0.18, right=0.9, bottom=0.18, top=0.90, wspace=0.35, hspace=0.4)
@@ -169,7 +165,7 @@ def fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, v_lift, 
         fig.savefig('../fig/{}/snapshot_{}/{}.png'.format(save_name, tmp_name, i), format='png', dpi=300, transparent=False)
         plt.close()
         #=========================#
-        #  progress               # 
+        #  progress               #
         #=========================#
         if (i==0):
             print('          >> {:.2f} %'  .format(float(count)/float(N_file)*100), end='')
@@ -184,6 +180,4 @@ def fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, v_lift, 
     mk_movie.func_animation(last_file, write_step, save_name, tmp_name)
     print('finish')
 
-
-    
 # END #

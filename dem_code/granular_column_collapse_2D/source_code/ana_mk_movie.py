@@ -1,5 +1,5 @@
 #=========================#
-#  module                 # 
+#  module                 #
 #=========================#
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -41,7 +41,7 @@ def func_animation(last_file, write_step, save_name, val):
     # convert the ndarray to Artist (im_display will be updated)
     im_display = ax.imshow(first_img)
 
-    # frame list [e.g.] if write_step=10, frame_list=[10, 20, 30, ..., last_file])
+    # frame list (e.g., if write_step=10, frame_list=[10, 20, 30, ..., last_file])
     frame_list = list(range(0, last_file + 1, write_step))
 
     # update function

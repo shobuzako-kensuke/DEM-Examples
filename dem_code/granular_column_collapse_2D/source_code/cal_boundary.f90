@@ -1,12 +1,12 @@
 subroutine cal_boundary(x_me, u_me, o_me, c_delta, c_name, Force, Torque)
     !=========================!
-    !  module                 ! 
+    !  module                 !
     !=========================!
     use input
     use global_variables
 
     !=========================!
-    !  local variables        ! 
+    !  local variables        !
     !=========================!
     implicit none
     real(8), intent(in) :: x_me(2), u_me(2), o_me
@@ -48,7 +48,7 @@ subroutine cal_boundary(x_me, u_me, o_me, c_delta, c_name, Force, Torque)
     endif
 
     !=========================!
-    !  left wall >> -3        ! 
+    !  left wall >> -3        !
     !=========================!
     wl_kind = -3
     n_wl(:) = (/1.0d0, 0.0d0/)
@@ -64,7 +64,7 @@ subroutine cal_boundary(x_me, u_me, o_me, c_delta, c_name, Force, Torque)
     endif
 
     !=========================!
-    !  right wall >> -4       ! 
+    !  right wall >> -4       !
     !=========================!
     wl_kind = -4
     n_wl(:) = (/-1.0d0, 0.0d0/)
@@ -80,7 +80,7 @@ subroutine cal_boundary(x_me, u_me, o_me, c_delta, c_name, Force, Torque)
     endif
 
     !=========================!
-    !  gate >> -5             ! 
+    !  gate >> -5             !
     !=========================!
     if ((gate_switch == 0).or.(gate_switch == 1)) then  ! if gate is closed or opening
         wl_kind = -5
@@ -142,7 +142,7 @@ contains
         use global_variables
 
         !=========================!
-        !  local variables        ! 
+        !  local variables        !
         !=========================!
         implicit none
         real(8), intent(in) :: x_me(2), u_me(2), o_me, n_wl(2), r_wl, u_wl(2), o_wl
@@ -205,7 +205,7 @@ contains
         f_t_ij = sqrt(f_t(1)**2.0d0 + f_t(2)**2.0d0)  ! magnitude of f_t
 
         if (f_t_ij > mu_w* f_n_ij) then               ! Yes, sliding
-            f_t(:) = - mu_w* f_t_ij* t_ij(:)          ! kinetic friction force
+            f_t(:) = - mu_w* f_n_ij* t_ij(:)          ! kinetic friction force
             c_delta(index,:) = d_t(:) - u_t(:)*dt     ! not change displacement
 
         else                                          ! No, below sliding friction

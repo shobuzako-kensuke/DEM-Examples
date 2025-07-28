@@ -1,19 +1,19 @@
 subroutine cal_U_max
     !=========================!
-    !  module                 ! 
+    !  module                 !
     !=========================!
     use input
     use global_variables
 
     !=========================!
-    !  local variables        ! 
+    !  local variables        !
     !=========================!
     implicit none
     integer :: me
     real(8) :: U_tmp(N)
 
     !=========================!
-    !  calculate U_max        ! 
+    !  calculate U_max        !
     !=========================!
     !$ call omp_set_dynamic(.false.)
     !$ call omp_set_num_threads(N_threads)
