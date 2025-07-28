@@ -1,10 +1,10 @@
 # Intel Fortran ===============================================================#
-# COMPILER = ifx
-# FFLAGS   = -O2 -xHost -ipo -fiopenmp -convert big_endian -static-intel
+COMPILER = ifx
+FFLAGS   = -O2 -xHost -ipo -fiopenmp -convert big_endian -static-intel
 
 # gfortran ====================================================================#
-COMPILER = gfortran
-FFLAGS   = -O2 -fopenmp -fconvert=big-endian
+# COMPILER = gfortran
+# FFLAGS   = -O2 -fopenmp -fconvert=big-endian
 
 #==============================================================================#
 #=========================== NOT CHANGE BELOW =================================#
