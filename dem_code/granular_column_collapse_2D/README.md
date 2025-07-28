@@ -2,7 +2,7 @@
 
 |Granular Column Collapse (2D) | Initial setting (an example) |
 |:---:|:---:|
-|<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=300>|<img src="https://github.com/user-attachments/assets/a8586839-d23b-4bf2-b056-c5f4cf1dba70" alt="initial_setting_granular_column_collapse_2D" width=300>|
+|<img src="https://github.com/user-attachments/assets/cb0b81a5-61bb-4860-b0f8-f94014b2cc68" alt="granular_column_collapse" width=300>|<img src="https://github.com/user-attachments/assets/c3709de8-9f0e-4d21-8b0a-f8f83a1f303c" alt="initial_setting_granular_column_collapse_2D" width=300>|
 
 ## 🚩Problem Statement
 
