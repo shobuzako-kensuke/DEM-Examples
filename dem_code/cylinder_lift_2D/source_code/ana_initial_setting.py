@@ -9,7 +9,7 @@ plt.rcParams['mathtext.fontset'] = 'cm' # mathfont for figure
 #=========================#
 #  main                   #
 #=========================#
-def main(N, Lx, Ly, W, v_lift, mark_size, parent_path, save_path):
+def main(N, Lx, Ly, W, x1, v_lift, mark_size, parent_path, save_path):
 
     #=========================#
     #  read                   #
@@ -37,10 +37,13 @@ def main(N, Lx, Ly, W, v_lift, mark_size, parent_path, save_path):
     cfig = ax2.scatter(x[0,:], x[1,:], c=cell, cmap='jet', ec='none', \
                        vmin=cell.min(), vmax=cell.max(), marker='.', s=mark_size)
     
-    ax1.plot([W, W], [gate_height[0,0], Ly], c='k', linewidth=1.0)
-    ax2.plot([W, W], [gate_height[0,0], Ly], c='k', linewidth=1.0)
+    ax1.plot([x1  , x1  ], [gate_height[0,0], Ly], c='k', linewidth=1.0)
+    ax1.plot([x1+W, x1+W], [gate_height[0,0], Ly], c='k', linewidth=1.0)
 
-    ax1.text(1.1*W, 0.8*Ly, '↑ v_lift = {:.2f}'.format(v_lift), fontsize=14)
+    ax2.plot([x1  , x1  ], [gate_height[0,0], Ly], c='k', linewidth=1.0)
+    ax2.plot([x1+W, x1+W], [gate_height[0,0], Ly], c='k', linewidth=1.0)
+
+    ax1.text(1.01*(x1+W), 0.8*Ly, '↑ v_lift = {:.2f}'.format(v_lift), fontsize=14)
 
     # color bar
     cbar = plt.colorbar(cfig, aspect=30, shrink=0.9, ax=ax2, orientation='vertical', pad=0.05, location='right')

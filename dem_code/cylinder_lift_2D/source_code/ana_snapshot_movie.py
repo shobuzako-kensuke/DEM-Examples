@@ -10,7 +10,7 @@ plt.rcParams['mathtext.fontset'] = 'cm' # mathfont for figure
 #=========================#
 #  for position           #
 #=========================#
-def position(last_file, write_step, N_file, dt, N, Lx, Ly, W, mark_size, parent_path, save_name):
+def position(last_file, write_step, N_file, dt, N, Lx, Ly, W, x1, mark_size, parent_path, save_name):
     save_path = '../fig/{}/snapshot_position'.format(save_name)
     os.makedirs(save_path, exist_ok=True)
     #=========================#
@@ -36,7 +36,8 @@ def position(last_file, write_step, N_file, dt, N, Lx, Ly, W, mark_size, parent_
         
         ax = fig.add_subplot(111, facecolor='white')
         ax.scatter(x[0,:], x[1,:], c='dimgray', ec='none', marker='.', s=mark_size)
-        ax.plot([W, W], [gate_height[0,0], Ly], c='k', linewidth=1.0)
+        ax.plot([x1  , x1  ], [gate_height[0,0], Ly], c='k', linewidth=1.0)
+        ax.plot([x1+W, x1+W], [gate_height[0,0], Ly], c='k', linewidth=1.0)
 
         # axis label
         ax.set_xlabel(r'$x~[\mathrm{m}]$', fontsize=20, labelpad=10)
@@ -81,7 +82,7 @@ def position(last_file, write_step, N_file, dt, N, Lx, Ly, W, mark_size, parent_
 #=========================#
 #  fig_cmap               #
 #=========================#
-def fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, mark_size, val_min, val_max, parent_path, save_name):
+def fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, x1, mark_size, val_min, val_max, parent_path, save_name):
     save_path = '../fig/{}/snapshot_{}'.format(save_name, tmp_name)
     os.makedirs(save_path, exist_ok=True)
     #=========================#
@@ -116,7 +117,8 @@ def fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, mark_siz
         plt.subplots_adjust(left=0.18, right=0.9, bottom=0.18, top=0.90, wspace=0.35, hspace=0.4)
         
         ax = fig.add_subplot(111, facecolor='white')
-        ax.plot([W, W], [gate_height[0,0], Ly], c='k', linewidth=1.0)
+        ax.plot([x1  , x1  ], [gate_height[0,0], Ly], c='k', linewidth=1.0)
+        ax.plot([x1+W, x1+W], [gate_height[0,0], Ly], c='k', linewidth=1.0)
 
         if (tmp_name == 'u'):
             cfig = ax.scatter(x[0,:], x[1,:], c=u[0,:], ec='k', marker='.', \

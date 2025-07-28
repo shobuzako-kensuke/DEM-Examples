@@ -80,12 +80,12 @@ subroutine cal_boundary(x_me, u_me, o_me, c_delta, c_name, Force, Torque)
     endif
 
     !=========================!
-    !  gate >> -5             !
+    !  right gate >> -5       !
     !=========================!
     if ((gate_switch == 0).or.(gate_switch == 1)) then  ! if gate is closed or opening
         wl_kind = -5
         n_wl(:) = (/-1.0d0, 0.0d0/)
-        r_wl    = W - x_me(1)
+        r_wl    = x1 + W - x_me(1)
         o_wl    = 0.0d0
 
         if (gate_switch == 0) then
@@ -95,7 +95,7 @@ subroutine cal_boundary(x_me, u_me, o_me, c_delta, c_name, Force, Torque)
         endif
 
         ! if contact
-        if ((-R+W <= x_me(1)).and.(x_me(1) <= W).and.(x_me(2) >= gate_height(1,1))) then
+        if ((-R+x1+W <= x_me(1)).and.(x_me(1) <= x1+W).and.(x_me(2) >= gate_height(1,1))) then
             call cal_wl(x_me, u_me, o_me, c_delta, c_name, Force, Torque, &
                         n_wl, r_wl, u_wl, o_wl, wl_kind)
 
@@ -105,6 +105,31 @@ subroutine cal_boundary(x_me, u_me, o_me, c_delta, c_name, Force, Torque)
         endif
     endif
 
+    !=========================!
+    !  left gate >> -6        !
+    !=========================!
+    if ((gate_switch == 0).or.(gate_switch == 1)) then  ! if gate is closed or opening
+        wl_kind = -6
+        n_wl(:) = (/1.0d0, 0.0d0/)
+        r_wl    = x_me(1) - x1
+        o_wl    = 0.0d0
+
+        if (gate_switch == 0) then
+            u_wl(:) = (/0.0d0, 0.0d0/)
+        elseif (gate_switch == 1) then
+            u_wl(:) = (/0.0d0, v_lift/)
+        endif
+
+        ! if contact
+        if ((x1 <= x_me(1)).and.(x_me(1) <= x1+R).and.(x_me(2) >= gate_height(1,1))) then
+            call cal_wl(x_me, u_me, o_me, c_delta, c_name, Force, Torque, &
+                        n_wl, r_wl, u_wl, o_wl, wl_kind)
+
+        ! if no contact
+        else
+            call delete_index(wl_kind, c_name, c_delta)
+        endif
+    endif
 
 
 !>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>!

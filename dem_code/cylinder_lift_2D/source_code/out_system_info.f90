@@ -54,6 +54,7 @@ subroutine out_system_info
     write(10, *) 'Ly'
     write(10, *) 'W'
     write(10, *) 'H'
+    write(10, *) 'x1'
     write(10, *) 'v_lift'
     write(10, *) 'U_threshold'
 
@@ -84,6 +85,7 @@ subroutine out_system_info
     write(11, *) Ly
     write(11, *) W
     write(11, *) H
+    write(11, *) x1
     write(11, *) v_lift
     write(11, *) U_threshold
 

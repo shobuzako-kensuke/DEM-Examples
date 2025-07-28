@@ -55,7 +55,8 @@ subroutine set_system
     !=========================!
     !  initial configuration  !
     !=========================!
-    x(:,1) = R
+    x(1,1) = x1 + R
+    x(2,1) = R
     do me = 2, N
         if (me <= Nx) then
             x(1,me) = x(1,me-1) + D

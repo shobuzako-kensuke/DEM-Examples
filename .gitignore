@@ -14,7 +14,7 @@
 # Windows Zone.Identifier metadata files
 **/*Zone.Identifier
 
-# LaTeX 中間ファイル
+# LaTeX temporary files
 **/*.aux
 **/*.bbl
 **/*.blg

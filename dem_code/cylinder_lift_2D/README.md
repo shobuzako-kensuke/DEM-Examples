@@ -1,13 +1,13 @@
-# granular_column_collapse_2D
+# cylinder_lift_2D
 
-|Granular Column Collapse (2D) | Initial setting (an example) |
+|Cylinder Lift (2D) | Initial setting (an example) |
 |:---:|:---:|
 |<img src="https://github.com/user-attachments/assets/18cfbd63-cab5-45f0-a84d-abecbd7118e6" alt="granular_column_collapse" width=300>|<img src="https://github.com/user-attachments/assets/a8586839-d23b-4bf2-b056-c5f4cf1dba70" alt="initial_setting_granular_column_collapse_2D" width=300>|
 
 ## 🚩Problem Statement
 
 ### Overview
-1. Particles are set at the top left corner.
+1. Particles are set between `x1` and `x1+W`, where `W` is the granular width.
 2. They free fall, resulting in the formation of a stable configuration.
 3. If the maximum particle speed `U_max` exceeds `U_threshold`, the gate begins to open at a fixed lift speed `v_lift`.
 4. Particles become stationary at the angle of repose.

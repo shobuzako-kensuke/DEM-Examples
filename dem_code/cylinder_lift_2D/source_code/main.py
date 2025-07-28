@@ -41,7 +41,7 @@ variable_path = parent_path + '/system_info/system_info_VALUES.dat'  # file path
  
 Nx, Ny, N, D, m, I, dt, total_step, write_step, \
 R, k, e, eta, rho, mu_s, mu_r, mu_w, \
-g, Lx, Ly, W, H, v_lift, U_threshold \
+g, Lx, Ly, W, H, x1, v_lift, U_threshold \
 = read_f90.read_variables(variable_path)
 
 #=========================#
@@ -68,7 +68,7 @@ if fig_ini:
     print('[message] Figures for initial settings are being made.')
     save_path = '../fig/{}'.format(save_name)
     os.makedirs(save_path, exist_ok=True)
-    ini.main(N, Lx, Ly, W, v_lift, mark_size, parent_path, save_path)
+    ini.main(N, Lx, Ly, W, x1, v_lift, mark_size, parent_path, save_path)
     print('[message] Figures for initial settings have been made.')
     print('+ -------------------------------------------------------- +')
 
@@ -77,22 +77,22 @@ if fig_ini:
 #=========================#
 if fig_pos:
     print('[message] Snapshots of position are being made.')
-    snap_movie.position(last_file, write_step, N_file, dt, N, Lx, Ly, W, mark_size, parent_path, save_name)
+    snap_movie.position(last_file, write_step, N_file, dt, N, Lx, Ly, W, x1, mark_size, parent_path, save_name)
 
 if fig_u:
     print('[message] Snapshots of velocity u are being made.')
     tmp_name = 'u'
-    snap_movie.fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, mark_size, val_min, val_max, parent_path, save_name)
+    snap_movie.fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, x1, mark_size, val_min, val_max, parent_path, save_name)
     
 if fig_v:
     print('[message] Snapshots of velocity v are being made.')
     tmp_name = 'v'
-    snap_movie.fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, mark_size, val_min, val_max, parent_path, save_name)
+    snap_movie.fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, x1, mark_size, val_min, val_max, parent_path, save_name)
 
 if fig_o:
     print('[message] Snapshots of angular velocity o are being made.')
     tmp_name = 'o'
-    snap_movie.fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, mark_size, val_min, val_max, parent_path, save_name)
+    snap_movie.fig_cmap(tmp_name, last_file, write_step, N_file, dt, N, Lx, Ly, W, x1, mark_size, val_min, val_max, parent_path, save_name)
 
 print('+ -------------------------------------------------------- +')
 end_time = time.perf_counter()
